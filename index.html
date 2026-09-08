@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISSION: REPORT MASTER - Informatika SMP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar" style="display: none;">
+        <div class="nav-container">
+            <div class="nav-brand">REPORT MASTER</div>
+            <div class="nav-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="mainProgress"></div>
+                </div>
+                <span class="progress-text" id="progressText">0%</span>
+            </div>
+            <button class="nav-btn" onclick="goToDashboard()">🏠 Dashboard</button>
+        </div>
+    </nav>
+
+    <!-- Page 1: Cover -->
+    <section id="page-cover" class="page active">
+        <div class="cover-container">
+            <div class="cover-content">
+                <div class="cover-badge">INFORMATIKA SMP</div>
+                <h1 class="cover-title">
+                    <span class="title-mission">MISSION:</span>
+                    <span class="title-main">REPORT MASTER</span>
+                </h1>
+                <p class="cover-subtitle">"Ubah Informasi Menjadi Laporan yang Bermakna"</p>
+                
+                <div class="cover-illustration">
+                    <div class="illustration-item">💻</div>
+                    <div class="illustration-item">📊</div>
+                    <div class="illustration-item">📁</div>
+                    <div class="illustration-item">🌐</div>
+                    <div class="illustration-item">📈</div>
+                    <div class="illustration-item">🎓</div>
+                </div>
+
+                <div class="cover-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Mata Pelajaran:</span>
+                            <span class="info-value">Informatika</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Topik:</span>
+                            <span class="info-value">Laporan</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Fase:</span>
+                            <span class="info-value">D</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Nama Sekolah:</span>
+                            <span class="info-value">[NAMA SEKOLAH]</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">NKSN/NPSN:</span>
+                            <span class="info-value">[NKSN/NPSN]</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Guru:</span>
+                            <span class="info-value">[NAMA GURU]</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Hari/Tanggal:</span>
+                            <span class="info-value">Selasa, 8 September 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary btn-large" onclick="startMission()">
+                    🚀 MULAI MISI
+                </button>
+
+                <p class="cover-question">Siap menjadi Report Master?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 2: Student Identity -->
+    <section id="page-identity" class="page">
+        <div class="container">
+            <div class="card-center">
+                <div class="card-header">
+                    <h2>👤 IDENTITAS SISWA</h2>
+                    <p>Masukkan identitasmu untuk memulai perjalanan belajar</p>
+                </div>
+                <div class="card-body">
+                    <form id="identityForm" onsubmit="saveIdentity(event)">
+                        <div class="form-group">
+                            <label for="studentName">Nama Lengkap</label>
+                            <input type="text" id="studentName" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label for="studentClass">Kelas</label>
+                            <input type="text" id="studentClass" required placeholder="Contoh: VIII-A">
+                        </div>
+                        <div class="form-group">
+                            <label for="studentNumber">Nomor Absen</label>
+                            <input type="number" id="studentNumber" required placeholder="Nomor absen">
+                        </div>
+                        <button type="submit" class="btn-primary btn-large">LANJUTKAN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: Dashboard -->
+    <section id="page-dashboard" class="page">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>WELCOME, <span id="studentNameDisplay">REPORT MASTER</span>!</h1>
+                <div class="progress-section">
+                    <div class="progress-bar-large">
+                        <div class="progress-fill" id="dashboardProgress"></div>
+                    </div>
+                    <p class="progress-label"><span id="dashboardProgressText">0</span>% Complete</p>
+                </div>
+            </div>
+
+            <div class="missions-grid">
+                <div class="mission-card locked" data-mission="1" onclick="startMissionPage(1)">
+                    <div class="mission-icon">🧠</div>
+                    <div class="mission-content">
+                        <h3>MISSION 01</h3>
+                        <p>PRETEST</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="2" onclick="startMissionPage(2)">
+                    <div class="mission-icon">📚</div>
+                    <div class="mission-content">
+                        <h3>MISSION 02</h3>
+                        <p>KENALI LAPORAN</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="3" onclick="startMissionPage(3)">
+                    <div class="mission-icon">🧩</div>
+                    <div class="mission-content">
+                        <h3>MISSION 03</h3>
+                        <p>STRUKTUR LAPORAN</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="4" onclick="startMissionPage(4)">
+                    <div class="mission-icon">🛠️</div>
+                    <div class="mission-content">
+                        <h3>MISSION 04</h3>
+                        <p>REPORT BUILDER</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="5" onclick="startMissionPage(5)">
+                    <div class="mission-icon">🟢</div>
+                    <div class="mission-content">
+                        <h3>MISSION 05</h3>
+                        <p>QUIZ EASY</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="6" onclick="startMissionPage(6)">
+                    <div class="mission-icon">🟡</div>
+                    <div class="mission-content">
+                        <h3>MISSION 06</h3>
+                        <p>QUIZ MEDIUM</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="7" onclick="startMissionPage(7)">
+                    <div class="mission-icon">🔴</div>
+                    <div class="mission-content">
+                        <h3>MISSION 07</h3>
+                        <p>QUIZ EXPERT</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="8" onclick="startMissionPage(8)">
+                    <div class="mission-icon">🏆</div>
+                    <div class="mission-content">
+                        <h3>MISSION 08</h3>
+                        <p>REPORT CHALLENGE</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="9" onclick="startMissionPage(9)">
+                    <div class="mission-icon">🧠</div>
+                    <div class="mission-content">
+                        <h3>MISSION 09</h3>
+                        <p>POSTTEST</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="10" onclick="startMissionPage(10)">
+                    <div class="mission-icon">💭</div>
+                    <div class="mission-content">
+                        <h3>MISSION 10</h3>
+                        <p>REFLEKSI 4P</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+
+                <div class="mission-card locked" data-mission="11" onclick="startMissionPage(11)">
+                    <div class="mission-icon">🎓</div>
+                    <div class="mission-content">
+                        <h3>MISSION 11</h3>
+                        <p>HASIL BELAJAR</p>
+                        <span class="mission-status">🔒 Locked</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="badges-section">
+                <h2>🏅 BADGES KAMU</h2>
+                <div class="badges-grid" id="badgesGrid">
+                    <div class="badge-item locked">
+                        <div class="badge-icon">🏅</div>
+                        <p>DATA EXPLORER</p>
+                    </div>
+                    <div class="badge-item locked">
+                        <div class="badge-icon">🏅</div>
+                        <p>STRUCTURE MASTER</p>
+                    </div>
+                    <div class="badge-item locked">
+                        <div class="badge-icon">🏅</div>
+                        <p>REPORT BUILDER</p>
+                    </div>
+                    <div class="badge-item locked">
+                        <div class="badge-icon">🏅</div>
+                        <p>CRITICAL THINKER</p>
+                    </div>
+                    <div class="badge-item locked">
+                        <div class="badge-icon">🏆</div>
+                        <p>REPORT MASTER</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 1: Pretest -->
+    <section id="mission-1" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🧠 MISSION 01: PRETEST</h1>
+                <p class="mission-subtitle">"Seberapa Kenal Kamu dengan Laporan?"</p>
+            </div>
+
+            <div class="quiz-container" id="pretestQuiz"></div>
+
+            <div class="quiz-result" id="pretestResult" style="display: none;">
+                <h2>📊 HASIL PRETEST</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span class="score-value" id="pretestScore">0</span>
+                        <span class="score-label">/100</span>
+                    </div>
+                </div>
+                <p class="result-message">Pretest bukan nilai akhir. Ini adalah peta awal perjalanan belajarmu.</p>
+                <div class="result-details" id="pretestDetails"></div>
+                <button class="btn-primary" onclick="completeMission(1)">LANJUT KE MISSION 02 →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 2: Materi Laporan -->
+    <section id="mission-2" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>📚 MISSION 02: KENALI LAPORAN</h1>
+                <p class="mission-subtitle">Pahami konsep dasar laporan dalam Informatika</p>
+            </div>
+
+            <div class="content-cards">
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>📝 Pengertian Laporan</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Laporan adalah dokumen yang berisi informasi hasil kegiatan, penelitian, atau observasi yang disajikan secara sistematis dan objektif. Dalam Informatika, laporan digunakan untuk mengkomunikasikan hasil analisis data, temuan penelitian, atau dokumentasi proyek teknologi.</p>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>🎯 Tujuan Laporan</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Menyampaikan informasi secara akurat dan lengkap</li>
+                            <li>Mendokumentasikan kegiatan atau hasil penelitian</li>
+                            <li>Menjadi dasar pengambilan keputusan</li>
+                            <li>Memberikan pertanggungjawaban atas kegiatan yang dilakukan</li>
+                            <li>Berbagi pengetahuan dan temuan dengan orang lain</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>⚡ Fungsi Laporan</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Fungsi Informatif:</strong> Memberikan informasi kepada pembaca</li>
+                            <li><strong>Fungsi Dokumentasi:</strong> Merekam kegiatan atau peristiwa</li>
+                            <li><strong>Fungsi Pertanggungjawaban:</strong> Mempertanggungjawabkan tugas yang dilakukan</li>
+                            <li><strong>Fungsi Evaluasi:</strong> Menilai keberhasilan suatu kegiatan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>✅ Ciri-Ciri Laporan yang Baik</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Objektif:</strong> Berdasarkan fakta, bukan opini pribadi</li>
+                            <li><strong>Sistematis:</strong> Disusun dengan struktur yang jelas dan runtut</li>
+                            <li><strong>Lengkap:</strong> Memuat semua informasi yang diperlukan</li>
+                            <li><strong>Akurat:</strong> Data dan informasi yang disajikan benar</li>
+                            <li><strong>Jelas:</strong> Mudah dipahami oleh pembaca</li>
+                            <li><strong>Formal:</strong> Menggunakan bahasa baku dan tidak emosional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>📋 Jenis-Jenis Laporan</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Laporan Kegiatan:</strong> Melaporkan kegiatan yang telah dilakukan</li>
+                            <li><strong>Laporan Penelitian:</strong> Menyajikan hasil penelitian atau eksperimen</li>
+                            <li><strong>Laporan Observasi:</strong> Melaporkan hasil pengamatan</li>
+                            <li><strong>Laporan Proyek:</strong> Dokumentasi proyek yang dikerjakan</li>
+                            <li><strong>Laporan Keuangan:</strong> Melaporkan kondisi keuangan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>💬 Bahasa dalam Laporan</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Menggunakan bahasa Indonesia yang baku</li>
+                            <li>Kalimat efektif dan tidak bertele-tele</li>
+                            <li>Menghindari bahasa emosional</li>
+                            <li>Menggunakan istilah teknis dengan tepat</li>
+                            <li>Menghindari singkatan tidak baku</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>🔍 Fakta, Data, dan Opini</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Fakta:</strong> Kenyataan yang dapat dibuktikan kebenarannya. Contoh: "30 siswa mengikuti survei"</p>
+                        <p><strong>Data:</strong> Informasi yang dikumpulkan dari penelitian atau observasi. Contoh: "25 dari 30 siswa menggunakan media sosial"</p>
+                        <p><strong>Opini:</strong> Pendapat atau pandangan pribadi. Contoh: "Media sosial sangat menarik"</p>
+                        <p class="highlight">⚠️ Laporan harus berbasis FAKTA dan DATA, bukan opini!</p>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>📖 Sumber Informasi</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Sumber Primer:</strong> Observasi langsung, wawancara, survei</li>
+                            <li><strong>Sumber Sekunder:</strong> Buku, jurnal, artikel, website</li>
+                            <li>Semua sumber harus dicantumkan dalam daftar sumber/referensi</li>
+                            <li>Mencantumkan sumber menunjukkan integritas dan menghindari plagiarisme</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="expandable-card">
+                    <div class="card-title" onclick="toggleCard(this)">
+                        <span>⚖️ Etika Menggunakan Informasi</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Tidak menyalin karya orang lain (plagiarisme)</li>
+                            <li>Mencantumkan sumber dengan jelas</li>
+                            <li>Tidak memalsukan data</li>
+                            <li>Menghormati privasi responden</li>
+                            <li>Menyajikan informasi secara objektif</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3>🔗 LAPORAN DALAM INFORMATIKA</h3>
+                    <div class="process-flow">
+                        <div class="flow-item">📥 Mengumpulkan informasi</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-item">🔍 Memilah informasi</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-item">⚙️ Mengolah data</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-item">📊 Menganalisis</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-item">📄 Menyajikan</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-item">📢 Mengomunikasikan hasil</div>
+                    </div>
+                    <p>Dalam Informatika, kemampuan membuat laporan sangat penting untuk mengkomunikasikan hasil analisis data, dokumentasi proyek, dan temuan penelitian teknologi.</p>
+                </div>
+            </div>
+
+            <button class="btn-primary btn-large" onclick="completeMission(2)">LANJUT KE MISSION 03 →</button>
+        </div>
+    </section>
+
+    <!-- Mission 3: Struktur Laporan -->
+    <section id="mission-3" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🧩 MISSION 03: STRUKTUR LAPORAN</h1>
+                <p class="mission-subtitle">Bongkar Struktur Laporan</p>
+            </div>
+
+            <div class="structure-grid">
+                <div class="structure-card" onclick="showStructureDetail(1)">
+                    <div class="structure-number">1</div>
+                    <h3>Judul</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(2)">
+                    <div class="structure-number">2</div>
+                    <h3>Pendahuluan</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(3)">
+                    <div class="structure-number">3</div>
+                    <h3>Latar Belakang</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(4)">
+                    <div class="structure-number">4</div>
+                    <h3>Tujuan</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(5)">
+                    <div class="structure-number">5</div>
+                    <h3>Metode/Kegiatan</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(6)">
+                    <div class="structure-number">6</div>
+                    <h3>Hasil</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(7)">
+                    <div class="structure-number">7</div>
+                    <h3>Pembahasan</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(8)">
+                    <div class="structure-number">8</div>
+                    <h3>Kesimpulan</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(9)">
+                    <div class="structure-number">9</div>
+                    <h3>Saran</h3>
+                </div>
+                <div class="structure-card" onclick="showStructureDetail(10)">
+                    <div class="structure-number">10</div>
+                    <h3>Daftar Sumber</h3>
+                </div>
+            </div>
+
+            <div class="example-report">
+                <h2>📄 Contoh Laporan Sederhana</h2>
+                <div class="report-sample">
+                    <h3>LAPORAN SURVEI PENGGUNAAN INTERNET SISWA KELAS VIII</h3>
+                    
+                    <h4>1. Pendahuluan</h4>
+                    <p>Internet telah menjadi bagian penting dalam kehidupan siswa. Survei ini dilakukan untuk mengetahui kebiasaan penggunaan internet di kalangan siswa kelas VIII.</p>
+                    
+                    <h4>2. Latar Belakang</h4>
+                    <p>Dengan semakin berkembangnya teknologi, penggunaan internet di kalangan pelajar terus meningkat. Penting untuk mengetahui bagaimana siswa memanfaatkan internet agar dapat memberikan arahan yang tepat.</p>
+                    
+                    <h4>3. Tujuan</h4>
+                    <p>Mengetahui kebiasaan dan tujuan penggunaan internet oleh siswa kelas VIII.</p>
+                    
+                    <h4>4. Metode</h4>
+                    <p>Survei dilakukan dengan menyebarkan kuesioner kepada 30 siswa kelas VIII pada tanggal 1 September 2026.</p>
+                    
+                    <h4>5. Hasil</h4>
+                    <p>Dari 30 responden, diperoleh data: 27 siswa menggunakan internet untuk mencari informasi, 25 siswa untuk media sosial, 23 siswa untuk menonton video, 20 siswa untuk bermain game, dan 18 siswa untuk belajar.</p>
+                    
+                    <h4>6. Pembahasan</h4>
+                    <p>Mayoritas siswa (90%) menggunakan internet untuk mencari informasi, menunjukkan kesadaran akan pentingnya literasi digital. Namun, hanya 60% yang memanfaatkannya untuk belajar, sehingga perlu ditingkatkan.</p>
+                    
+                    <h4>7. Kesimpulan</h4>
+                    <p>Siswa kelas VIII aktif menggunakan internet, terutama untuk mencari informasi dan media sosial. Penggunaan untuk belajar masih perlu ditingkatkan.</p>
+                    
+                    <h4>8. Saran</h4>
+                    <p>Sekolah perlu memberikan edukasi tentang pemanfaatan internet untuk pembelajaran yang lebih optimal.</p>
+                    
+                    <h4>9. Daftar Sumber</h4>
+                    <p>Data primer: Survei siswa kelas VIII, 1 September 2026</p>
+                </div>
+            </div>
+
+            <button class="btn-primary btn-large" onclick="completeMission(3)">LANJUT KE MISSION 04 →</button>
+        </div>
+    </section>
+
+    <!-- Mission 4: Report Builder -->
+    <section id="mission-4" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🛠️ MISSION 04: REPORT BUILDER</h1>
+                <p class="mission-subtitle">Bangun Laporanmu Sendiri</p>
+            </div>
+
+            <div class="case-study">
+                <h3>📋 KASUS</h3>
+                <p>Sekolah ingin mengetahui kebiasaan penggunaan internet siswa kelas VIII.</p>
+                
+                <h4>📊 DATA</h4>
+                <div class="data-display">
+                    <p><strong>Jumlah responden:</strong> 30 siswa</p>
+                    <ul>
+                        <li>Belajar: 18 siswa</li>
+                        <li>Media sosial: 25 siswa</li>
+                        <li>Game: 20 siswa</li>
+                        <li>Menonton video: 23 siswa</li>
+                        <li>Mencari informasi: 27 siswa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="builder-steps" id="builderSteps">
+                <!-- Steps will be populated by JavaScript -->
+            </div>
+
+            <div id="builderResult" style="display: none;">
+                <h2>✅ REPORT CHECKER</h2>
+                <div class="checker-results" id="checkerResults"></div>
+                
+                <div class="report-actions">
+                    <button class="btn-secondary btn-large" onclick="previewReport()">👁️ PREVIEW LAPORAN</button>
+                    <button class="btn-secondary btn-large" onclick="downloadReport()">📥 DOWNLOAD LAPORAN (PDF)</button>
+                    <button class="btn-primary btn-large" onclick="completeMission(4)">LANJUT KE MISSION 05 →</button>
+                </div>
+            </div>
+
+            <!-- Report Preview Modal -->
+            <div id="reportPreviewModal" class="modal">
+                <div class="modal-content modal-large">
+                    <span class="close" onclick="closeReportPreview()">&times;</span>
+                    <div id="reportPreviewContent" class="report-preview"></div>
+                    <div class="modal-actions">
+                        <button class="btn-secondary" onclick="printReport()">🖨️ PRINT</button>
+                        <button class="btn-primary" onclick="closeReportPreview()">TUTUP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 5: Quiz Easy -->
+    <section id="mission-5" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🟢 MISSION 05: QUIZ EASY</h1>
+                <p class="mission-subtitle">LEVEL 1 - EASY</p>
+            </div>
+
+            <div class="quiz-container" id="quizEasy"></div>
+
+            <div class="quiz-result" id="quizEasyResult" style="display: none;">
+                <h2>📊 HASIL QUIZ EASY</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span class="score-value" id="quizEasyScore">0</span>
+                        <span class="score-label">/100</span>
+                    </div>
+                </div>
+                <div class="result-details" id="quizEasyDetails"></div>
+                <div id="badgeEasyEarned" style="display: none;" class="badge-earned">
+                    <h3>🏅 BADGE EARNED!</h3>
+                    <div class="badge-large">🏅</div>
+                    <p>DATA EXPLORER</p>
+                </div>
+                <button class="btn-primary" onclick="completeMission(5)">LANJUT KE MISSION 06 →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 6: Quiz Medium -->
+    <section id="mission-6" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🟡 MISSION 06: QUIZ MEDIUM</h1>
+                <p class="mission-subtitle">LEVEL 2 - MEDIUM</p>
+            </div>
+
+            <div class="quiz-container" id="quizMedium"></div>
+
+            <div class="quiz-result" id="quizMediumResult" style="display: none;">
+                <h2>📊 HASIL QUIZ MEDIUM</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span class="score-value" id="quizMediumScore">0</span>
+                        <span class="score-label">/100</span>
+                    </div>
+                </div>
+                <div class="result-details" id="quizMediumDetails"></div>
+                <div id="badgeMediumEarned" style="display: none;" class="badge-earned">
+                    <h3>🏅 BADGE EARNED!</h3>
+                    <div class="badge-large">🏅</div>
+                    <p>STRUCTURE MASTER</p>
+                </div>
+                <button class="btn-primary" onclick="completeMission(6)">LANJUT KE MISSION 07 →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 7: Quiz Expert -->
+    <section id="mission-7" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🔴 MISSION 07: QUIZ EXPERT</h1>
+                <p class="mission-subtitle">LEVEL 3 - EXPERT</p>
+            </div>
+
+            <div class="quiz-container" id="quizExpert"></div>
+
+            <div class="quiz-result" id="quizExpertResult" style="display: none;">
+                <h2>📊 HASIL QUIZ EXPERT</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span class="score-value" id="quizExpertScore">0</span>
+                        <span class="score-label">/100</span>
+                    </div>
+                </div>
+                <div class="result-details" id="quizExpertDetails"></div>
+                <div id="badgeExpertEarned" style="display: none;" class="badge-earned">
+                    <h3>🏅 BADGE EARNED!</h3>
+                    <div class="badge-large">🏅</div>
+                    <p>CRITICAL THINKER</p>
+                </div>
+                <button class="btn-primary" onclick="completeMission(7)">LANJUT KE MISSION 08 →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 8: Report Challenge -->
+    <section id="mission-8" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🏆 MISSION 08: FINAL PROJECT</h1>
+                <p class="mission-subtitle">CREATE YOUR REPORT</p>
+            </div>
+
+            <div class="theme-selection" id="themeSelection">
+                <h3>Pilih Tema Laporan:</h3>
+                <div class="theme-cards">
+                    <div class="theme-card" onclick="selectTheme('A')">
+                        <input type="radio" name="theme" id="themeA">
+                        <label for="themeA">
+                            <h4>A. Kebiasaan Penggunaan Internet Siswa</h4>
+                        </label>
+                    </div>
+                    <div class="theme-card" onclick="selectTheme('B')">
+                        <input type="radio" name="theme" id="themeB">
+                        <label for="themeB">
+                            <h4>B. Penggunaan Gadget di Lingkungan Sekolah</h4>
+                        </label>
+                    </div>
+                    <div class="theme-card" onclick="selectTheme('C')">
+                        <input type="radio" name="theme" id="themeC">
+                        <label for="themeC">
+                            <h4>C. Pemanfaatan Teknologi untuk Belajar</h4>
+                        </label>
+                    </div>
+                    <div class="theme-card" onclick="selectTheme('D')">
+                        <input type="radio" name="theme" id="themeD">
+                        <label for="themeD">
+                            <h4>D. Keamanan Digital Siswa</h4>
+                        </label>
+                    </div>
+                    <div class="theme-card" onclick="selectTheme('E')">
+                        <input type="radio" name="theme" id="themeE">
+                        <label for="themeE">
+                            <h4>E. Penggunaan AI dalam Pembelajaran</h4>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="startProjectReport()">MULAI MEMBUAT LAPORAN</button>
+            </div>
+
+            <div class="project-form" id="projectForm" style="display: none;">
+                <div class="checklist-box">
+                    <h3>📋 CHECKLIST</h3>
+                    <div class="checklist-items" id="projectChecklist">
+                        <label><input type="checkbox" id="check1"> Struktur lengkap</label>
+                        <label><input type="checkbox" id="check2"> Menggunakan data</label>
+                        <label><input type="checkbox" id="check3"> Menggunakan bahasa formal</label>
+                        <label><input type="checkbox" id="check4"> Sumber informasi dicantumkan</label>
+                        <label><input type="checkbox" id="check5"> Kesimpulan sesuai data</label>
+                        <label><input type="checkbox" id="check6"> Tidak menyalin karya orang lain</label>
+                    </div>
+                </div>
+
+                <div class="project-sections" id="projectSections">
+                    <!-- Will be populated by JS -->
+                </div>
+
+                <button class="btn-primary btn-large" onclick="submitProject()">SUBMIT PROJECT</button>
+            </div>
+
+            <div id="projectResult" style="display: none;">
+                <h2>✅ PROJECT SELESAI!</h2>
+                <div id="badgeProjectEarned" class="badge-earned">
+                    <h3>🏅 BADGE EARNED!</h3>
+                    <div class="badge-large">🏅</div>
+                    <p>REPORT BUILDER</p>
+                </div>
+                <button class="btn-primary" onclick="completeMission(8)">LANJUT KE MISSION 09 →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 9: Posttest -->
+    <section id="mission-9" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🧠 MISSION 09: POSTTEST</h1>
+                <p class="mission-subtitle">Ukur Perkembangan Pemahamanmu</p>
+            </div>
+
+            <div class="quiz-container" id="posttestQuiz"></div>
+
+            <div class="quiz-result" id="posttestResult" style="display: none;">
+                <h2>📊 HASIL POSTTEST</h2>
+                <div class="score-comparison">
+                    <div class="comparison-item">
+                        <h3>PRETEST</h3>
+                        <div class="score-circle-small">
+                            <span id="pretestCompare">0</span>
+                        </div>
+                    </div>
+                    <div class="comparison-arrow">→</div>
+                    <div class="comparison-item">
+                        <h3>POSTTEST</h3>
+                        <div class="score-circle-small">
+                            <span id="posttestCompare">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="learning-gain">
+                    <h3>📈 LEARNING GAIN</h3>
+                    <div class="gain-value" id="learningGain">+0</div>
+                </div>
+                <p class="gain-message" id="gainMessage"></p>
+                <div class="result-details" id="posttestDetails"></div>
+                <button class="btn-primary" onclick="completeMission(9)">LANJUT KE MISSION 10 →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission 10: Refleksi 4P -->
+    <section id="mission-10" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>💭 MISSION 10: REFLEKSI 4P</h1>
+                <p class="mission-subtitle">Berhenti sejenak. Lihat kembali perjalanan belajarmu.</p>
+            </div>
+
+            <form id="reflectionForm" onsubmit="submitReflection(event)">
+                <div class="reflection-section">
+                    <h3>1️⃣ PERISTIWA</h3>
+                    <p class="reflection-question">Apa pengalaman paling penting yang kamu alami selama pembelajaran?</p>
+                    <textarea id="refPeristiwa" rows="4" required placeholder="Tuliskan pengalamanmu..."></textarea>
+                </div>
+
+                <div class="reflection-section">
+                    <h3>2️⃣ PERASAAN</h3>
+                    <p class="reflection-question">Bagaimana perasaanmu selama belajar membuat laporan?</p>
+                    <div class="feeling-options">
+                        <label class="feeling-option">
+                            <input type="radio" name="feeling" value="Sangat Senang" required>
+                            <span class="feeling-emoji">😀</span>
+                            <span>Sangat senang</span>
+                        </label>
+                        <label class="feeling-option">
+                            <input type="radio" name="feeling" value="Senang" required>
+                            <span class="feeling-emoji">🙂</span>
+                            <span>Senang</span>
+                        </label>
+                        <label class="feeling-option">
+                            <input type="radio" name="feeling" value="Biasa saja" required>
+                            <span class="feeling-emoji">😐</span>
+                            <span>Biasa saja</span>
+                        </label>
+                        <label class="feeling-option">
+                            <input type="radio" name="feeling" value="Kesulitan" required>
+                            <span class="feeling-emoji">😟</span>
+                            <span>Kesulitan</span>
+                        </label>
+                        <label class="feeling-option">
+                            <input type="radio" name="feeling" value="Sangat Kesulitan" required>
+                            <span class="feeling-emoji">😣</span>
+                            <span>Sangat kesulitan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="reflection-section">
+                    <h3>3️⃣ PEMBELAJARAN</h3>
+                    <p class="reflection-question">Apa pengetahuan atau keterampilan baru yang kamu dapatkan?</p>
+                    <textarea id="refPembelajaran" rows="4" required placeholder="Tuliskan apa yang kamu pelajari..."></textarea>
+                </div>
+
+                <div class="reflection-section">
+                    <h3>4️⃣ PENERAPAN</h3>
+                    <p class="reflection-question">Bagaimana kamu akan menerapkan keterampilan membuat laporan dalam kehidupan nyata?</p>
+                    <textarea id="refPenerapan" rows="4" required placeholder="Tuliskan rencana penerapanmu..."></textarea>
+                </div>
+
+                <div class="reflection-section">
+                    <h3>💡 KESIMPULAN</h3>
+                    <p class="reflection-question">Setelah pembelajaran ini, saya sekarang mampu...</p>
+                    <textarea id="refKesimpulan" rows="3" required placeholder="Tuliskan kemampuan barumu..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-large">SELESAIKAN REFLEKSI</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Mission 11: Hasil Belajar -->
+    <section id="mission-11" class="page mission-page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>🎓 YOUR LEARNING RESULT</h1>
+                <p class="mission-subtitle">Hasil Perjalanan Belajarmu</p>
+            </div>
+
+            <div class="result-identity">
+                <h2 id="resultStudentName">Nama Siswa</h2>
+                <p id="resultStudentClass">Kelas</p>
+            </div>
+
+            <div class="final-scores">
+                <div class="score-card">
+                    <h3>PRETEST</h3>
+                    <div class="score-value-large" id="finalPretest">0</div>
+                </div>
+                <div class="score-card">
+                    <h3>QUIZ EASY</h3>
+                    <div class="score-value-large" id="finalQuizEasy">0</div>
+                </div>
+                <div class="score-card">
+                    <h3>QUIZ MEDIUM</h3>
+                    <div class="score-value-large" id="finalQuizMedium">0</div>
+                </div>
+                <div class="score-card">
+                    <h3>QUIZ EXPERT</h3>
+                    <div class="score-value-large" id="finalQuizExpert">0</div>
+                </div>
+                <div class="score-card">
+                    <h3>REPORT BUILDER</h3>
+                    <div class="score-value-large" id="finalBuilder">0</div>
+                </div>
+                <div class="score-card">
+                    <h3>PROJECT</h3>
+                    <div class="score-value-large" id="finalProject">0</div>
+                </div>
+                <div class="score-card">
+                    <h3>POSTTEST</h3>
+                    <div class="score-value-large" id="finalPosttest">0</div>
+                </div>
+            </div>
+
+            <div class="final-result-box">
+                <h2>📊 NILAI AKHIR</h2>
+                <div class="final-score-display">
+                    <div class="final-score-circle">
+                        <span id="finalScore">0</span>
+                    </div>
+                </div>
+                <div class="final-status" id="finalStatus">Status</div>
+                <div class="learning-gain-final">
+                    <h3>📈 LEARNING GAIN</h3>
+                    <p id="finalLearningGain">+0</p>
+                </div>
+            </div>
+
+            <div class="competency-section">
+                <h2>✅ KOMPETENSI YANG DICAPAI</h2>
+                <div class="competency-list">
+                    <div class="competency-item">✅ Memahami laporan</div>
+                    <div class="competency-item">✅ Memahami struktur laporan</div>
+                    <div class="competency-item">✅ Menganalisis data</div>
+                    <div class="competency-item">✅ Menyusun laporan</div>
+                    <div class="competency-item">✅ Menggunakan sumber informasi</div>
+                    <div class="competency-item">✅ Melakukan refleksi</div>
+                </div>
+            </div>
+
+            <div class="badges-earned-final">
+                <h2>🏅 BADGES EARNED</h2>
+                <div class="badges-final-grid" id="badgesFinalGrid"></div>
+            </div>
+
+            <div class="final-master-badge" id="finalMasterBadge" style="display: none;">
+                <h2>🎉 SELAMAT!</h2>
+                <div class="master-badge-display">
+                    <div class="badge-master">🏆</div>
+                    <h3>REPORT MASTER</h3>
+                    <p>Kamu telah menyelesaikan semua misi!</p>
+                </div>
+            </div>
+
+            <button class="btn-primary btn-large" onclick="exportData()">📥 EXPORT HASIL BELAJAR</button>
+            <button class="btn-secondary btn-large" onclick="goToDashboard()">🏠 KEMBALI KE DASHBOARD</button>
+        </div>
+    </section>
+
+    <!-- Teacher Dashboard -->
+    <section id="page-teacher" class="page">
+        <div class="container">
+            <div class="mission-header">
+                <h1>👨‍🏫 TEACHER DASHBOARD</h1>
+                <p class="mission-subtitle">Analisis Hasil Pembelajaran</p>
+            </div>
+
+            <div class="teacher-stats">
+                <div class="stat-card">
+                    <h3>Jumlah Siswa</h3>
+                    <div class="stat-value" id="teacherTotalStudents">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Rata-rata Pretest</h3>
+                    <div class="stat-value" id="teacherAvgPretest">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Rata-rata Posttest</h3>
+                    <div class="stat-value" id="teacherAvgPosttest">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Learning Gain</h3>
+                    <div class="stat-value" id="teacherAvgGain">+0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Ketuntasan</h3>
+                    <div class="stat-value" id="teacherCompletionRate">0%</div>
+                </div>
+            </div>
+
+            <div class="teacher-insights">
+                <h2>🔎 LEARNING INSIGHT</h2>
+                <div class="insight-box" id="teacherInsights">
+                    <p>Data pembelajaran akan muncul setelah siswa menyelesaikan aktivitas.</p>
+                </div>
+            </div>
+
+            <div class="teacher-recommendations">
+                <h2>💡 REKOMENDASI</h2>
+                <div class="recommendation-box" id="teacherRecommendations">
+                    <p>Rekomendasi akan muncul berdasarkan analisis data siswa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Structure Details -->
+    <div id="structureModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="structureModalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
