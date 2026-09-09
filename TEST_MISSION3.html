@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST - Mission 3 Structure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+        }
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .structure-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .structure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        .structure-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .structure-card h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .structure-desc {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 5px;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .comparison-box {
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .old {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+        }
+        .new {
+            background: #e8f5e9;
+            border: 2px solid #66bb6a;
+        }
+        .comparison-box h3 {
+            margin-bottom: 15px;
+        }
+        .old h3 {
+            color: #c62828;
+        }
+        .new h3 {
+            color: #2e7d32;
+        }
+        .comparison-box ol {
+            padding-left: 20px;
+        }
+        .comparison-box li {
+            margin: 8px 0;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .status.removed {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+        .status.added {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧩 MISSION 03: STRUKTUR LAPORAN FORMAL</h1>
+        <p class="subtitle">Kenali Struktur Laporan yang Benar</p>
+
+        <div class="comparison">
+            <div class="comparison-box old">
+                <h3>❌ STRUKTUR LAMA (10 bagian)</h3>
+                <span class="status removed">DIHAPUS</span>
+                <ol>
+                    <li>Judul</li>
+                    <li>Pendahuluan</li>
+                    <li>Latar Belakang</li>
+                    <li>Tujuan</li>
+                    <li>Metode/Kegiatan</li>
+                    <li>Hasil</li>
+                    <li>Pembahasan</li>
+                    <li>Kesimpulan</li>
+                    <li>Saran</li>
+                    <li>Daftar Sumber</li>
+                </ol>
+            </div>
+            <div class="comparison-box new">
+                <h3>✅ STRUKTUR BARU (8 bagian formal)</h3>
+                <span class="status added">SESUAI MISSION 4</span>
+                <ol>
+                    <li><strong>Halaman Judul</strong> - Cover</li>
+                    <li><strong>Kata Pengantar</strong></li>
+                    <li><strong>Daftar Isi</strong> - Auto</li>
+                    <li><strong>BAB I - PENDAHULUAN</strong></li>
+                    <li><strong>BAB II - PEMBAHASAN</strong></li>
+                    <li><strong>BAB III - PENUTUP</strong></li>
+                    <li><strong>Daftar Pustaka</strong></li>
+                    <li><strong>Lampiran</strong></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📚 Struktur Laporan Formal</h3>
+            <p>Laporan formal memiliki struktur yang terorganisir dengan baik. Klik setiap bagian untuk mempelajari lebih detail!</p>
+        </div>
+
+        <div class="structure-grid">
+            <div class="structure-card">
+                <div class="structure-number">1</div>
+                <h3>Halaman Judul</h3>
+                <p class="structure-desc">Cover laporan</p>
+            </div>
+            <div class="structure-card">
+                <div class="structure-number">2</div>
+                <h3>Kata Pengantar</h3>
+                <p class="structure-desc">Ucapan pembuka</p>
+            </div>
+            <div class="structure-card">
+                <div class="structure-number">3</div>
+                <h3>Daftar Isi</h3>
+                <p class="structure-desc">Navigasi laporan</p>
+            </div>
+            <div class="structure-card">
+                <div class="structure-number">4</div>
+                <h3>BAB I: Pendahuluan</h3>
+                <p class="structure-desc">Pembuka & Konteks</p>
+            </div>
+            <div class="structure-card">
+                <div class="structure-number">5</div>
+                <h3>BAB II: Pembahasan</h3>
+                <p class="structure-desc">Inti Laporan</p>
+            </div>
+            <div class="structure-card">
+                <div class="structure-number">6</div>
+                <h3>BAB III: Penutup</h3>
+                <p class="structure-desc">Kesimpulan & Saran</p>
+            </div>
+            <div class="structure-card">
+                <div class="structure-number">7</div>
+                <h3>Daftar Pustaka</h3>
+                <p class="structure-desc">Sumber Referensi</p>
+            </div>
+            <div class="structure-card">
+                <div class="structure-number">8</div>
+                <h3>Lampiran</h3>
+                <p class="structure-desc">Dokumen Pendukung</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; background: #f0f0f0; border-radius: 12px; text-align: center;">
+            <h3 style="color: #667eea; margin-bottom: 10px;">✅ STRUKTUR SUDAH DIUPDATE!</h3>
+            <p style="color: #666;">Mission 3 sekarang sesuai dengan struktur formal Mission 4</p>
+            <p style="margin-top: 15px; font-weight: 600;">Silakan refresh browser (Ctrl+F5) untuk melihat perubahan di website utama</p>
+        </div>
+    </div>
+</body>
+</html>
