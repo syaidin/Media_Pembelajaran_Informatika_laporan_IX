@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Debug Button MULAI MISI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .status {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid;
+        }
+        .success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+        .warning {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+        .info {
+            background: #d1ecf1;
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+            font-weight: bold;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        ol, ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        .test-button {
+            text-align: center;
+            margin: 30px 0;
+        }
+        #testResults {
+            margin-top: 20px;
+        }
+        .result-item {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .pass {
+            background: #d4edda;
+            color: #155724;
+        }
+        .fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 DEBUG: Tombol MULAI MISI</h1>
+        
+        <div class="status warning">
+            <strong>⚠️ PENTING: CLEAR CACHE TERLEBIH DAHULU!</strong><br>
+            Tekan <code>Ctrl + Shift + Delete</code> → Clear Cached Images and Files<br>
+            Atau Hard Reload: <code>Ctrl + F5</code>
+        </div>
+
+        <div class="test-button">
+            <button onclick="runDiagnostic()">🔍 JALANKAN DIAGNOSTIC</button>
+            <button onclick="testButton()">🧪 TEST BUTTON</button>
+            <button onclick="window.open('index.html', '_blank')">📄 BUKA INDEX.HTML</button>
+        </div>
+
+        <div id="testResults"></div>
+
+        <div class="status info">
+            <h3>📋 Langkah-langkah Perbaikan:</h3>
+            <ol>
+                <li><strong>Clear Browser Cache</strong>
+                    <ul>
+                        <li>Chrome/Edge: Ctrl + Shift + Delete</li>
+                        <li>Centang "Cached images and files"</li>
+                        <li>Klik "Clear data"</li>
+                    </ul>
+                </li>
+                <li><strong>Hard Reload Halaman</strong>
+                    <ul>
+                        <li>Tekan Ctrl + F5 di halaman index.html</li>
+                        <li>Atau Ctrl + Shift + R</li>
+                    </ul>
+                </li>
+                <li><strong>Test di Incognito Mode</strong>
+                    <ul>
+                        <li>Tekan Ctrl + Shift + N (Chrome/Edge)</li>
+                        <li>Buka index.html di incognito</li>
+                    </ul>
+                </li>
+                <li><strong>Cek Console</strong>
+                    <ul>
+                        <li>Tekan F12 untuk buka DevTools</li>
+                        <li>Pilih tab "Console"</li>
+                        <li>Refresh halaman (F5)</li>
+                        <li>Lihat apakah ada error warna merah</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="status success">
+            <h3>✅ Yang Sudah Diperbaiki:</h3>
+            <ul>
+                <li>✅ Button ID sudah benar: <code>#btnStartMission</code></li>
+                <li>✅ Event listener sudah ditambahkan di script.js</li>
+                <li>✅ Fungsi startMission() sudah ada</li>
+                <li>✅ Syntax error di script.js sudah dibersihkan</li>
+            </ul>
+        </div>
+
+        <div class="status warning">
+            <h3>🔍 Kemungkinan Penyebab:</h3>
+            <ol>
+                <li><strong>Browser Cache</strong> - File lama masih ter-cache (PALING SERING)</li>
+                <li><strong>JavaScript Error</strong> - Ada error yang menghalangi event listener</li>
+                <li><strong>CSS z-index</strong> - Ada elemen yang menutupi button</li>
+                <li><strong>Path Script</strong> - File script.js tidak ter-load dengan benar</li>
+            </ol>
+        </div>
+
+        <div class="status info">
+            <h3>💡 Manual Test di Console:</h3>
+            <p>Buka index.html, tekan F12, lalu ketik di Console:</p>
+            <div class="code">// Test 1: Cek button ada atau tidak
+console.log(document.getElementById('btnStartMission'));
+
+// Test 2: Cek fungsi ada atau tidak
+console.log(typeof startMission);
+
+// Test 3: Panggil fungsi secara manual
+startMission();
+
+// Test 4: Cek computed style (pastikan tidak ada yang menutupi)
+const btn = document.getElementById('btnStartMission');
+console.log(window.getComputedStyle(btn).zIndex);
+console.log(window.getComputedStyle(btn).pointerEvents);</div>
+        </div>
+
+        <div class="status error">
+            <h3>🚨 Jika Masih Tidak Bisa:</h3>
+            <ol>
+                <li>Screenshot Console error (F12 → Console tab)</li>
+                <li>Screenshot Network tab (F12 → Network → refresh → cari script.js)</li>
+                <li>Coba browser lain (Chrome, Firefox, Edge)</li>
+                <li>Pastikan tidak ada extension browser yang mengganggu</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function runDiagnostic() {
+            const results = document.getElementById('testResults');
+            results.innerHTML = '<h2>📊 Hasil Diagnostic:</h2>';
+            
+            const tests = [];
+            
+            // Test 1: Check if we're on the same domain
+            tests.push({
+                name: 'Browser Environment',
+                pass: true,
+                message: `Running in: ${navigator.userAgent}`
+            });
+
+            // Test 2: Check localStorage
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                tests.push({
+                    name: 'LocalStorage Available',
+                    pass: true,
+                    message: 'LocalStorage berfungsi normal'
+                });
+            } catch(e) {
+                tests.push({
+                    name: 'LocalStorage Available',
+                    pass: false,
+                    message: 'LocalStorage tidak tersedia: ' + e.message
+                });
+            }
+
+            // Test 3: Check if script can access files
+            tests.push({
+                name: 'File Location',
+                pass: true,
+                message: `File location: ${window.location.href}`
+            });
+
+            // Display results
+            tests.forEach(test => {
+                const div = document.createElement('div');
+                div.className = `result-item ${test.pass ? 'pass' : 'fail'}`;
+                div.innerHTML = `${test.pass ? '✅' : '❌'} <strong>${test.name}:</strong> ${test.message}`;
+                results.appendChild(div);
+            });
+
+            // Add recommendations
+            const rec = document.createElement('div');
+            rec.className = 'status warning';
+            rec.style.marginTop = '20px';
+            rec.innerHTML = `
+                <h3>💡 Rekomendasi:</h3>
+                <ol>
+                    <li>WAJIB: Clear browser cache (Ctrl + Shift + Delete)</li>
+                    <li>Hard reload index.html (Ctrl + F5)</li>
+                    <li>Buka index.html di incognito mode (Ctrl + Shift + N)</li>
+                    <li>Buka Console (F12) dan lihat apakah ada error</li>
+                </ol>
+            `;
+            results.appendChild(rec);
+        }
+
+        function testButton() {
+            alert('Button Test berfungsi! Ini artinya JavaScript berjalan dengan baik.\n\nSekarang coba:\n1. Clear cache browser\n2. Buka index.html\n3. Tekan F12 untuk buka Console\n4. Klik tombol MULAI MISI\n5. Lihat apakah ada pesan di console');
+        }
+
+        console.log('DEBUG_BUTTON.html loaded successfully!');
+        console.log('Silakan klik tombol JALANKAN DIAGNOSTIC untuk memulai test');
+    </script>
+</body>
+</html>

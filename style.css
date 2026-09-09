@@ -6,21 +6,38 @@
 }
 
 :root {
-    --primary-blue: #2563eb;
-    --cyan: #06b6d4;
-    --purple: #8b5cf6;
-    --dark-navy: #0f172a;
-    --light-navy: #1e293b;
-    --white: #ffffff;
-    --light-gray: #f1f5f9;
-    --text-dark: #1e293b;
-    --text-light: #64748b;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --danger: #ef4444;
-    --gradient-1: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
-    --gradient-2: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-    --gradient-3: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    /* Warna Fresh & Energik untuk Anak SMP */
+    --primary: #FF6B6B;        /* Coral Pink - Menyenangkan & Ramah */
+    --secondary: #4ECDC4;      /* Turquoise - Fresh & Modern */
+    --accent: #FFE66D;         /* Sunshine Yellow - Ceria & Energik */
+    --purple: #A78BFA;         /* Soft Purple - Kreatif & Playful */
+    --orange: #FF9F45;         /* Orange - Antusias & Warm */
+    --pink: #FF6BB5;           /* Magenta Pink - Fun & Vibrant */
+    --blue: #5B9BFF;           /* Sky Blue - Calm & Friendly */
+    --green: #51CF66;          /* Fresh Green - Growth & Success */
+    
+    /* Background & Text */
+    --bg-light: #FFF5F5;       /* Light Pink Tint */
+    --bg-card: #FFFFFF;
+    --text-dark: #2D3748;
+    --text-light: #718096;
+    --text-gray: #A0AEC0;
+    
+    /* Status Colors */
+    --success: #51CF66;
+    --warning: #FFB84D;
+    --danger: #FF6B6B;
+    --info: #4ECDC4;
+    
+    /* Gradients - Colorful & Playful */
+    --gradient-1: linear-gradient(135deg, #FF6B6B 0%, #FF9F45 100%);
+    --gradient-2: linear-gradient(135deg, #4ECDC4 0%, #5B9BFF 100%);
+    --gradient-3: linear-gradient(135deg, #A78BFA 0%, #FF6BB5 100%);
+    --gradient-4: linear-gradient(135deg, #FFE66D 0%, #51CF66 100%);
+    --gradient-rainbow: linear-gradient(135deg, #FF6B6B 0%, #FF9F45 25%, #FFE66D 50%, #51CF66 75%, #4ECDC4 100%);
+    --gradient-sunset: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 50%, #FF9F45 100%);
+    --gradient-ocean: linear-gradient(135deg, #4ECDC4 0%, #5B9BFF 100%);
+    --gradient-purple: linear-gradient(135deg, #A78BFA 0%, #FF6BB5 100%);
 }
 
 body {

@@ -892,22 +892,6 @@ const structureDetails = {
         `
     }
 };
-        content: `
-            <h3>Pengertian</h3>
-            <p>Tujuan adalah pernyataan yang menjelaskan apa yang ingin dicapai dari kegiatan atau penelitian.</p>
-            
-            <h3>Fungsi</h3>
-            <ul>
-                <li>Memberikan arah yang jelas untuk kegiatan</li>
-                <li>Menjadi acuan untuk kesimpulan</li>
-                <li>Membantu fokus pada topik</li>
-            </ul>
-            
-            <h3>Contoh</h3>
-            <p>Mengetahui kebiasaan dan tujuan penggunaan internet oleh siswa kelas VIII SMP Negeri 1.</p>
-        `
-    }
-};
 
 // ========================================
 // REPORT BUILDER STEPS
@@ -2162,7 +2146,6 @@ window.addEventListener('DOMContentLoaded', function() {
     const btnStart = document.getElementById('btnStartMission');
     if (btnStart) {
         btnStart.addEventListener('click', function(e) {
-            e.preventDefault();
             console.log('Start Mission button clicked');
             startMission();
         });

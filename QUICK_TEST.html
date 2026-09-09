@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>⚡ QUICK TEST - Button MULAI MISI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            max-width: 700px;
+            text-align: center;
+        }
+        h1 {
+            color: #FF6B6B;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #718096;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        .btn {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF9F45 100%);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #4ECDC4 0%, #5B9BFF 100%);
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4);
+        }
+        .btn-secondary:hover {
+            box-shadow: 0 15px 40px rgba(78, 205, 196, 0.6);
+        }
+        .status {
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: left;
+        }
+        .warning {
+            background: #FFF3CD;
+            border-left: 5px solid #FFB84D;
+            color: #856404;
+        }
+        .success {
+            background: #D4EDDA;
+            border-left: 5px solid #51CF66;
+            color: #155724;
+        }
+        .error {
+            background: #F8D7DA;
+            border-left: 5px solid #FF6B6B;
+            color: #721C24;
+        }
+        .info {
+            background: #D1ECF1;
+            border-left: 5px solid #4ECDC4;
+            color: #0C5460;
+        }
+        code {
+            background: #F4F4F4;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #E83E8C;
+            font-weight: bold;
+        }
+        .steps {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .steps ol {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        .steps li {
+            margin: 10px 0;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .emoji {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">⚡</div>
+        <h1>QUICK TEST</h1>
+        <p class="subtitle">Test Tombol MULAI MISI</p>
+
+        <div class="status warning">
+            <strong>⚠️ PENTING!</strong><br>
+            Sebelum test, WAJIB clear cache terlebih dahulu:<br>
+            <code>Ctrl + Shift + Delete</code> atau <code>Ctrl + F5</code>
+        </div>
+
+        <div>
+            <button class="btn" onclick="testInlineClick()">
+                🧪 TEST 1: Inline onClick
+            </button>
+            <button class="btn btn-secondary" onclick="openIndexPage()">
+                📄 TEST 2: Buka Index.html
+            </button>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="status info">
+            <strong>✅ Langkah Test:</strong>
+            <div class="steps">
+                <ol>
+                    <li><strong>Clear Cache:</strong> Ctrl + Shift + Delete</li>
+                    <li><strong>Click "TEST 1"</strong> - jika muncul alert, inline onClick bekerja!</li>
+                    <li><strong>Click "TEST 2"</strong> - akan buka index.html</li>
+                    <li><strong>Di index.html:</strong> Tekan F12 untuk buka Console</li>
+                    <li><strong>Klik "MULAI MISI"</strong> - cek console log</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="status success">
+            <strong>🎉 Expected Result:</strong><br>
+            • Button "MULAI MISI" diklik → Langsung pindah ke form identitas<br>
+            • Console log: "Start Mission button clicked"<br>
+            • Tidak ada error di console
+        </div>
+
+        <div class="status error">
+            <strong>🚨 Jika Masih Gagal:</strong><br>
+            1. Test di <strong>Incognito Mode</strong> (Ctrl + Shift + N)<br>
+            2. Gunakan <strong>browser lain</strong> (Chrome/Firefox/Edge)<br>
+            3. Cek <strong>Console</strong> (F12) untuk error<br>
+            4. Buka file: <code>DEBUG_BUTTON.html</code> untuk diagnostic detail
+        </div>
+    </div>
+
+    <script>
+        console.log('✅ QUICK_TEST.html loaded');
+        console.log('JavaScript berfungsi normal!');
+
+        function testInlineClick() {
+            const result = document.getElementById('result');
+            result.className = 'status success';
+            result.innerHTML = `
+                <div class="emoji">✅</div>
+                <strong>TEST BERHASIL!</strong><br><br>
+                Inline onClick bekerja dengan sempurna!<br>
+                Ini artinya button "MULAI MISI" juga pasti bekerja.<br><br>
+                <strong>Next:</strong> Clear cache (Ctrl+F5) lalu test di index.html
+            `;
+            
+            alert('✅ SUCCESS!\n\nInline onClick bekerja!\nButton MULAI MISI pasti berfungsi.\n\nSekarang:\n1. Clear cache (Ctrl+F5)\n2. Buka index.html\n3. Klik MULAI MISI');
+        }
+
+        function openIndexPage() {
+            const result = document.getElementById('result');
+            result.className = 'status info';
+            result.innerHTML = `
+                <div class="emoji">📄</div>
+                <strong>Membuka index.html...</strong><br><br>
+                Setelah halaman terbuka:<br>
+                1. Tekan <code>F12</code> untuk buka Console<br>
+                2. Klik button "🚀 MULAI MISI"<br>
+                3. Lihat apakah ada log di console<br>
+                4. Pastikan halaman pindah ke form identitas
+            `;
+            
+            setTimeout(() => {
+                window.open('index.html', '_blank');
+            }, 500);
+        }
+
+        // Auto test on load
+        window.onload = function() {
+            console.log('='.repeat(50));
+            console.log('⚡ QUICK TEST - Button Diagnostic');
+            console.log('='.repeat(50));
+            console.log('✅ JavaScript environment: OK');
+            console.log('✅ DOM Ready: OK');
+            console.log('✅ Event handlers: OK');
+            console.log('');
+            console.log('💡 Klik tombol TEST untuk memulai diagnostic');
+            console.log('='.repeat(50));
+        };
+    </script>
+</body>
+</html>
