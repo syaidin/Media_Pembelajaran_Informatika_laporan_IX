@@ -2158,6 +2158,19 @@ function exportData() {
 window.addEventListener('DOMContentLoaded', function() {
     loadData();
     
+    // Attach event to Start Mission button
+    const btnStart = document.getElementById('btnStartMission');
+    if (btnStart) {
+        btnStart.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Start Mission button clicked');
+            startMission();
+        });
+        console.log('Start Mission button event attached');
+    } else {
+        console.error('Start Mission button not found');
+    }
+    
     // If student has data, show dashboard; otherwise show cover
     if (studentData.name) {
         showPage('page-dashboard');

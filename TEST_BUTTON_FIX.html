@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅ Test Button Fix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+        }
+        .status {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid;
+        }
+        .success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+        .warning {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        ol, ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ TEST BUTTON "MULAI MISI"</h1>
+        
+        <div class="status warning">
+            <strong>⚠️ PENTING: Clear Cache Dulu!</strong><br>
+            Sebelum test, pastikan clear browser cache:
+            <div class="code">Ctrl + Shift + Delete → Clear Cached Images and Files</div>
+            Atau gunakan Hard Reload: <div class="code">Ctrl + F5</div>
+        </div>
+
+        <div class="status success">
+            <strong>✅ Fix Sudah Diterapkan:</strong>
+            <ul>
+                <li>Button menggunakan ID: <code>#btnStartMission</code></li>
+                <li>Event listener ditambahkan di <code>script.js</code></li>
+                <li>Console logging untuk debugging</li>
+            </ul>
+        </div>
+
+        <h2>📋 Cara Test:</h2>
+        <ol>
+            <li><strong>Clear cache</strong> browser (Ctrl+Shift+Delete)</li>
+            <li>Buka <strong>index.html</strong> di browser</li>
+            <li>Buka <strong>Console</strong> (tekan F12, pilih tab Console)</li>
+            <li>Refresh halaman (F5 atau Ctrl+F5)</li>
+            <li>Lihat di Console, harus ada pesan:<br>
+                <div class="code">Start Mission button event attached</div>
+            </li>
+            <li>Klik button <strong>"🚀 MULAI MISI"</strong></li>
+            <li>Lihat di Console, harus ada pesan:<br>
+                <div class="code">Start Mission button clicked</div>
+            </li>
+            <li>Halaman harus berubah ke form identitas siswa</li>
+        </ol>
+
+        <h2>✅ Tanda-tanda Berhasil:</h2>
+        <ul>
+            <li>✅ Console menampilkan: "Start Mission button event attached"</li>
+            <li>✅ Saat button diklik, console menampilkan: "Start Mission button clicked"</li>
+            <li>✅ Halaman berpindah ke form identitas siswa</li>
+            <li>✅ Tidak ada error di console</li>
+        </ul>
+
+        <h2>❌ Jika Masih Bermasalah:</h2>
+        <ul>
+            <li>Pastikan sudah clear cache (ini yang paling sering menjadi masalah)</li>
+            <li>Coba buka di <strong>Incognito Mode</strong> (Ctrl+Shift+N)</li>
+            <li>Coba browser lain (Chrome, Edge, Firefox)</li>
+            <li>Periksa Console untuk error messages (warna merah)</li>
+            <li>Pastikan file script.js ter-load dengan benar</li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="window.location.href='index.html'">🚀 BUKA INDEX.HTML</button>
+            <button onclick="location.reload()">🔄 RELOAD PAGE INI</button>
+        </div>
+
+        <div class="status success" style="margin-top: 30px;">
+            <strong>💡 Tips Debugging:</strong><br>
+            Jika button masih tidak respond, buka Console (F12) dan ketik:
+            <div class="code">
+                document.getElementById('btnStartMission')
+            </div>
+            Jika hasilnya <code>null</code>, berarti button tidak ditemukan.<br>
+            Jika hasilnya <code>&lt;button...&gt;</code>, berarti button ada, masalahnya di event listener.
+        </div>
+    </div>
+
+    <script>
+        console.log('TEST_BUTTON_FIX.html loaded');
+        console.log('Fix sudah diterapkan. Silakan test di index.html');
+    </script>
+</body>
+</html>
