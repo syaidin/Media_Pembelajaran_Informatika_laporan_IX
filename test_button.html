@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .test-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-box">
+        <h1>🧪 Test Button "MULAI MISI"</h1>
+        <p>Klik button di bawah untuk test:</p>
+        
+        <button onclick="testFunction()">
+            🚀 MULAI MISI (Test)
+        </button>
+        
+        <button onclick="testScriptLoaded()">
+            📄 Check Script Loaded
+        </button>
+        
+        <button onclick="window.location.href='index.html'">
+            ↩️ Kembali ke Website Utama
+        </button>
+        
+        <div id="result"></div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; text-align: left;">
+            <h3>Diagnosis:</h3>
+            <p id="diagnosis">Menunggu test...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function testFunction() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            
+            // Test if startMission function exists
+            if (typeof startMission === 'function') {
+                resultDiv.className = 'success';
+                resultDiv.innerHTML = '<strong>✅ SUCCESS!</strong><br>Function startMission() exists and can be called.';
+                
+                // Try to call it
+                try {
+                    startMission();
+                    resultDiv.innerHTML += '<br>✅ Function executed without error!';
+                } catch(e) {
+                    resultDiv.innerHTML += '<br>⚠️ Function exists but error: ' + e.message;
+                }
+            } else {
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = '<strong>❌ ERROR!</strong><br>Function startMission() NOT FOUND.<br>Script.js might not be loaded correctly.';
+            }
+            
+            updateDiagnosis();
+        }
+        
+        function testScriptLoaded() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            
+            const functions = [
+                'startMission',
+                'showPage',
+                'loadData',
+                'saveData',
+                'updateDashboard'
+            ];
+            
+            let allFound = true;
+            let report = '<strong>Function Check:</strong><br>';
+            
+            functions.forEach(func => {
+                if (typeof window[func] === 'function') {
+                    report += `✅ ${func}() - Found<br>`;
+                } else {
+                    report += `❌ ${func}() - NOT FOUND<br>`;
+                    allFound = false;
+                }
+            });
+            
+            if (allFound) {
+                resultDiv.className = 'success';
+                resultDiv.innerHTML = report + '<br><strong>✅ All functions loaded correctly!</strong>';
+            } else {
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = report + '<br><strong>❌ Some functions are missing!</strong>';
+            }
+            
+            updateDiagnosis();
+        }
+        
+        function updateDiagnosis() {
+            const diagnosisDiv = document.getElementById('diagnosis');
+            let diagnosis = '';
+            
+            // Check if script is loaded
+            if (typeof startMission === 'function') {
+                diagnosis += '✅ script.js is loaded<br>';
+            } else {
+                diagnosis += '❌ script.js NOT loaded or has errors<br>';
+            }
+            
+            // Check if pages exist
+            const pages = ['page-cover', 'page-identity', 'page-dashboard'];
+            pages.forEach(pageId => {
+                if (document.getElementById(pageId)) {
+                    diagnosis += `✅ ${pageId} exists<br>`;
+                } else {
+                    diagnosis += `❌ ${pageId} NOT FOUND<br>`;
+                }
+            });
+            
+            diagnosisDiv.innerHTML = diagnosis;
+        }
+        
+        // Auto run diagnosis on load
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(updateDiagnosis, 500);
+        });
+    </script>
+</body>
+</html>
