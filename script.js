@@ -629,59 +629,269 @@ const posttestQuestions = [
 
 const structureDetails = {
     1: {
-        title: "1. JUDUL",
+        title: "1. HALAMAN JUDUL",
         content: `
             <h3>Pengertian</h3>
-            <p>Judul adalah nama atau topik laporan yang menggambarkan isi laporan secara singkat dan jelas.</p>
+            <p>Halaman judul adalah halaman pertama (cover) laporan yang memuat informasi identitas laporan.</p>
             
             <h3>Fungsi</h3>
             <ul>
-                <li>Memberikan gambaran umum tentang isi laporan</li>
+                <li>Memberikan identitas lengkap laporan</li>
                 <li>Menarik perhatian pembaca</li>
+                <li>Memberikan kesan profesional</li>
                 <li>Memudahkan identifikasi dan pengarsipan</li>
             </ul>
             
+            <h3>Komponen</h3>
+            <ul>
+                <li>Judul Laporan (ditulis dengan huruf kapital)</li>
+                <li>Logo/Gambar (opsional)</li>
+                <li>Identitas penyusun (nama, kelas)</li>
+                <li>Identitas sekolah</li>
+                <li>Tahun pembuatan</li>
+            </ul>
+            
             <h3>Contoh</h3>
-            <p><strong>"LAPORAN SURVEI PENGGUNAAN INTERNET SISWA KELAS VIII SMP NEGERI 1"</strong></p>
-            <p><strong>"LAPORAN OBSERVASI KEGIATAN PEMBELAJARAN DARING"</strong></p>
+            <div style="text-align: center; border: 1px solid #ccc; padding: 20px; margin: 10px 0;">
+                <h4>LAPORAN SURVEI</h4>
+                <h3>PENGGUNAAN INTERNET SISWA<br>KELAS VIII SMP NEGERI 1</h3>
+                <p style="margin: 30px 0;">Disusun Oleh:<br>Kelompok 1</p>
+                <p>SMP NEGERI 1<br>2026</p>
+            </div>
         `
     },
     2: {
-        title: "2. PENDAHULUAN",
+        title: "2. KATA PENGANTAR",
         content: `
             <h3>Pengertian</h3>
-            <p>Pendahuluan adalah bagian pembuka yang memberikan gambaran umum tentang laporan.</p>
+            <p>Kata pengantar adalah ucapan pembuka dari penulis yang berisi ungkapan syukur, tujuan penulisan, dan ucapan terima kasih.</p>
             
             <h3>Fungsi</h3>
             <ul>
-                <li>Memperkenalkan topik kepada pembaca</li>
-                <li>Memberikan konteks umum</li>
-                <li>Mengantar pembaca ke inti laporan</li>
+                <li>Mengungkapkan rasa syukur</li>
+                <li>Mengantar pembaca ke isi laporan</li>
+                <li>Menyampaikan ucapan terima kasih</li>
+                <li>Menunjukkan sikap profesional</li>
+            </ul>
+            
+            <h3>Struktur</h3>
+            <ul>
+                <li>Ungkapan syukur kepada Tuhan</li>
+                <li>Penjelasan singkat tentang laporan</li>
+                <li>Ucapan terima kasih kepada pihak terkait</li>
+                <li>Harapan dan penutup</li>
+                <li>Tempat, tanggal, dan tanda tangan penyusun</li>
             </ul>
             
             <h3>Contoh</h3>
-            <p>Internet telah menjadi bagian penting dalam kehidupan sehari-hari, termasuk bagi siswa SMP. Laporan ini menyajikan hasil survei tentang penggunaan internet di kalangan siswa.</p>
+            <p style="text-indent: 40px;">Puji syukur kami panjatkan kepada Tuhan Yang Maha Esa yang telah memberikan rahmat dan karunia-Nya sehingga kami dapat menyelesaikan laporan survei ini dengan baik.</p>
+            <p style="text-indent: 40px;">Laporan ini disusun berdasarkan hasil survei tentang penggunaan internet di kalangan siswa kelas VIII. Kami berharap laporan ini dapat memberikan informasi yang bermanfaat bagi pembaca.</p>
+            <p style="text-indent: 40px;">Kami mengucapkan terima kasih kepada semua pihak yang telah membantu dalam penyusunan laporan ini.</p>
         `
     },
     3: {
-        title: "3. LATAR BELAKANG",
+        title: "3. DAFTAR ISI",
         content: `
             <h3>Pengertian</h3>
-            <p>Latar belakang menjelaskan alasan dan konteks mengapa kegiatan atau penelitian dilakukan.</p>
+            <p>Daftar isi adalah daftar yang memuat judul bab, sub-bab, dan bagian lain beserta nomor halamannya.</p>
             
             <h3>Fungsi</h3>
             <ul>
-                <li>Menjelaskan pentingnya topik</li>
-                <li>Memberikan konteks permasalahan</li>
-                <li>Menunjukkan urgensi penelitian</li>
+                <li>Memudahkan pembaca menemukan bagian tertentu</li>
+                <li>Memberikan gambaran struktur laporan</li>
+                <li>Sebagai peta navigasi laporan</li>
+                <li>Menunjukkan sistematika laporan</li>
             </ul>
             
+            <h3>Format</h3>
+            <p>Daftar isi ditulis rapi dengan indentasi untuk sub-bagian dan dilengkapi nomor halaman di sebelah kanan.</p>
+            
             <h3>Contoh</h3>
-            <p>Penggunaan internet di kalangan pelajar terus meningkat. Penting untuk mengetahui pola penggunaan internet agar dapat memberikan arahan yang tepat tentang pemanfaatan internet yang positif dan produktif.</p>
+            <p>
+            KATA PENGANTAR .................... i<br>
+            DAFTAR ISI ........................ ii<br>
+            BAB I PENDAHULUAN ................. 1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;A. Latar Belakang ............. 1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;B. Tujuan ..................... 2<br>
+            BAB II PEMBAHASAN ................. 3<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;A. Metode Penelitian .......... 3<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;B. Hasil Penelitian ........... 4<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;C. Pembahasan ................. 5<br>
+            BAB III PENUTUP ................... 6<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;A. Kesimpulan ................. 6<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;B. Saran ...................... 7<br>
+            DAFTAR PUSTAKA .................... 8<br>
+            LAMPIRAN .......................... 9
+            </p>
         `
     },
     4: {
-        title: "4. TUJUAN",
+        title: "4. BAB I - PENDAHULUAN",
+        content: `
+            <h3>Pengertian</h3>
+            <p>BAB I PENDAHULUAN adalah bab pembuka yang memuat konteks umum, masalah, tujuan, dan manfaat penelitian.</p>
+            
+            <h3>Fungsi</h3>
+            <ul>
+                <li>Memberikan gambaran umum penelitian</li>
+                <li>Menjelaskan konteks dan latar belakang</li>
+                <li>Menyatakan tujuan penelitian</li>
+                <li>Menjelaskan manfaat penelitian</li>
+            </ul>
+            
+            <h3>Sub-Bagian</h3>
+            <ul>
+                <li><strong>A. Latar Belakang:</strong> Konteks dan alasan penelitian dilakukan</li>
+                <li><strong>B. Rumusan Masalah:</strong> Pertanyaan penelitian (opsional)</li>
+                <li><strong>C. Tujuan:</strong> Apa yang ingin dicapai dari penelitian</li>
+                <li><strong>D. Manfaat:</strong> Kegunaan hasil penelitian (opsional)</li>
+            </ul>
+            
+            <h3>Contoh</h3>
+            <p><strong>A. Latar Belakang</strong></p>
+            <p style="text-indent: 40px;">Dengan semakin berkembangnya teknologi, penggunaan internet di kalangan pelajar terus meningkat. Internet telah menjadi bagian penting dalam kehidupan siswa. Penting untuk mengetahui bagaimana siswa memanfaatkan internet agar dapat memberikan arahan yang tepat.</p>
+            
+            <p><strong>B. Tujuan</strong></p>
+            <p style="text-indent: 40px;">Mengetahui kebiasaan dan tujuan penggunaan internet oleh siswa kelas VIII SMP Negeri 1.</p>
+        `
+    },
+    5: {
+        title: "5. BAB II - PEMBAHASAN",
+        content: `
+            <h3>Pengertian</h3>
+            <p>BAB II PEMBAHASAN adalah inti laporan yang memuat teori, metode, hasil, dan analisis penelitian.</p>
+            
+            <h3>Fungsi</h3>
+            <ul>
+                <li>Menyajikan landasan teori</li>
+                <li>Menjelaskan metode penelitian</li>
+                <li>Menyajikan data dan hasil</li>
+                <li>Menganalisis dan menginterpretasi data</li>
+            </ul>
+            
+            <h3>Sub-Bagian</h3>
+            <ul>
+                <li><strong>A. Dasar Teori:</strong> Teori yang mendukung penelitian (opsional)</li>
+                <li><strong>B. Alat dan Bahan:</strong> Alat yang digunakan (jika ada)</li>
+                <li><strong>C. Metode Penelitian:</strong> Cara pengumpulan dan pengolahan data</li>
+                <li><strong>D. Hasil Penelitian:</strong> Data dan temuan objektif</li>
+                <li><strong>E. Pembahasan:</strong> Analisis dan interpretasi hasil</li>
+            </ul>
+            
+            <h3>Contoh</h3>
+            <p><strong>C. Metode Penelitian</strong></p>
+            <p style="text-indent: 40px;">Survei dilakukan dengan menyebarkan kuesioner digital kepada 30 siswa kelas VIII pada tanggal 1 September 2026.</p>
+            
+            <p><strong>D. Hasil Penelitian</strong></p>
+            <p style="text-indent: 40px;">Dari 30 responden, 27 siswa (90%) menggunakan internet untuk mencari informasi, 25 siswa (83%) untuk media sosial.</p>
+            
+            <p><strong>E. Pembahasan</strong></p>
+            <p style="text-indent: 40px;">Mayoritas siswa menggunakan internet untuk mencari informasi, menunjukkan kesadaran literasi digital yang baik.</p>
+        `
+    },
+    6: {
+        title: "6. BAB III - PENUTUP",
+        content: `
+            <h3>Pengertian</h3>
+            <p>BAB III PENUTUP adalah bab terakhir yang memuat kesimpulan dan saran penelitian.</p>
+            
+            <h3>Fungsi</h3>
+            <ul>
+                <li>Meringkas hasil penelitian</li>
+                <li>Menjawab tujuan penelitian</li>
+                <li>Memberikan rekomendasi</li>
+                <li>Menutup laporan dengan baik</li>
+            </ul>
+            
+            <h3>Sub-Bagian</h3>
+            <ul>
+                <li><strong>A. Kesimpulan:</strong> Ringkasan hasil yang menjawab tujuan penelitian</li>
+                <li><strong>B. Saran:</strong> Rekomendasi untuk tindak lanjut atau perbaikan</li>
+            </ul>
+            
+            <h3>Tips</h3>
+            <ul>
+                <li>Kesimpulan harus berdasarkan data dan hasil pembahasan</li>
+                <li>Jangan menambahkan informasi baru di kesimpulan</li>
+                <li>Saran harus realistis dan dapat diterapkan</li>
+                <li>Saran dapat ditujukan untuk berbagai pihak terkait</li>
+            </ul>
+            
+            <h3>Contoh</h3>
+            <p><strong>A. Kesimpulan</strong></p>
+            <p style="text-indent: 40px;">Berdasarkan hasil survei, siswa kelas VIII aktif menggunakan internet, terutama untuk mencari informasi (90%) dan media sosial (83%). Penggunaan untuk belajar (60%) masih perlu ditingkatkan.</p>
+            
+            <p><strong>B. Saran</strong></p>
+            <p style="text-indent: 40px;">Sekolah perlu memberikan edukasi tentang pemanfaatan internet untuk pembelajaran yang lebih optimal.</p>
+        `
+    },
+    7: {
+        title: "7. DAFTAR PUSTAKA",
+        content: `
+            <h3>Pengertian</h3>
+            <p>Daftar Pustaka adalah daftar sumber referensi yang digunakan dalam penyusunan laporan.</p>
+            
+            <h3>Fungsi</h3>
+            <ul>
+                <li>Menunjukkan kredibilitas informasi</li>
+                <li>Menghargai karya orang lain (menghindari plagiarisme)</li>
+                <li>Memudahkan pembaca mencari referensi</li>
+                <li>Menunjukkan luasnya referensi yang digunakan</li>
+            </ul>
+            
+            <h3>Format Penulisan</h3>
+            <p><strong>Buku:</strong><br>
+            Nama Penulis. (Tahun). <em>Judul Buku</em>. Kota: Penerbit.</p>
+            
+            <p><strong>Website:</strong><br>
+            Nama Penulis/Organisasi. (Tahun). Judul Artikel. Diakses dari URL pada tanggal akses.</p>
+            
+            <p><strong>Data Primer:</strong><br>
+            Data Primer: Keterangan data (survei, wawancara, observasi), tanggal.</p>
+            
+            <h3>Contoh</h3>
+            <p>Budiman, A. (2025). <em>Literasi Digital untuk Remaja</em>. Jakarta: Penerbit Teknologi.</p>
+            <p>Kominfo. (2026). Statistik Pengguna Internet Indonesia. Diakses dari https://www.kominfo.go.id pada 1 September 2026.</p>
+            <p>Data Primer: Survei Penggunaan Internet Siswa Kelas VIII SMP Negeri 1, 1 September 2026.</p>
+        `
+    },
+    8: {
+        title: "8. LAMPIRAN",
+        content: `
+            <h3>Pengertian</h3>
+            <p>Lampiran adalah bagian tambahan yang memuat dokumen pendukung yang tidak dimasukkan ke dalam isi laporan.</p>
+            
+            <h3>Fungsi</h3>
+            <ul>
+                <li>Menyediakan informasi pendukung yang detail</li>
+                <li>Memuat dokumentasi (foto, tabel, grafik)</li>
+                <li>Tidak mengganggu alur pembacaan laporan utama</li>
+                <li>Memberikan bukti/data mentah</li>
+            </ul>
+            
+            <h3>Isi Lampiran</h3>
+            <ul>
+                <li>Foto kegiatan atau dokumentasi</li>
+                <li>Kuesioner atau instrumen penelitian</li>
+                <li>Tabel data lengkap</li>
+                <li>Grafik atau diagram</li>
+                <li>Screenshot atau bukti digital</li>
+                <li>Surat izin atau dokumen lain</li>
+            </ul>
+            
+            <h3>Cara Penulisan</h3>
+            <p>Setiap lampiran diberi nomor atau label (Lampiran 1, Lampiran 2, dst) dan diberi judul yang jelas.</p>
+            
+            <h3>Contoh</h3>
+            <p><strong>LAMPIRAN 1</strong><br>
+            Kuesioner Survei Penggunaan Internet</p>
+            <p><strong>LAMPIRAN 2</strong><br>
+            Foto Kegiatan Pengisian Kuesioner</p>
+            <p><strong>LAMPIRAN 3</strong><br>
+            Tabel Data Lengkap Hasil Survei</p>
+        `
+    }
+};
         content: `
             <h3>Pengertian</h3>
             <p>Tujuan adalah pernyataan yang menjelaskan apa yang ingin dicapai dari kegiatan atau penelitian.</p>
@@ -695,113 +905,6 @@ const structureDetails = {
             
             <h3>Contoh</h3>
             <p>Mengetahui kebiasaan dan tujuan penggunaan internet oleh siswa kelas VIII SMP Negeri 1.</p>
-        `
-    },
-    5: {
-        title: "5. METODE/KEGIATAN",
-        content: `
-            <h3>Pengertian</h3>
-            <p>Metode menjelaskan cara, prosedur, atau langkah-langkah yang dilakukan dalam kegiatan atau penelitian.</p>
-            
-            <h3>Fungsi</h3>
-            <ul>
-                <li>Menjelaskan bagaimana data dikumpulkan</li>
-                <li>Memberikan informasi tentang validitas penelitian</li>
-                <li>Memungkinkan orang lain mengulang penelitian</li>
-            </ul>
-            
-            <h3>Contoh</h3>
-            <p>Survei dilakukan dengan menyebarkan kuesioner digital kepada 30 siswa kelas VIII pada tanggal 1-5 September 2026. Kuesioner berisi 10 pertanyaan tentang kebiasaan penggunaan internet.</p>
-        `
-    },
-    6: {
-        title: "6. HASIL",
-        content: `
-            <h3>Pengertian</h3>
-            <p>Hasil adalah bagian yang menyajikan data atau temuan dari kegiatan atau penelitian.</p>
-            
-            <h3>Fungsi</h3>
-            <ul>
-                <li>Menyajikan data mentah atau temuan</li>
-                <li>Memberikan fakta objektif</li>
-                <li>Menjadi dasar untuk pembahasan</li>
-            </ul>
-            
-            <h3>Contoh</h3>
-            <p>Dari 30 responden diperoleh data: 27 siswa (90%) menggunakan internet untuk mencari informasi, 25 siswa (83%) untuk media sosial, 23 siswa (77%) untuk menonton video, 20 siswa (67%) untuk bermain game, dan 18 siswa (60%) untuk belajar.</p>
-        `
-    },
-    7: {
-        title: "7. PEMBAHASAN",
-        content: `
-            <h3>Pengertian</h3>
-            <p>Pembahasan adalah analisis dan interpretasi terhadap data atau hasil yang telah disajikan.</p>
-            
-            <h3>Fungsi</h3>
-            <ul>
-                <li>Menganalisis dan menginterpretasi data</li>
-                <li>Menjelaskan makna dari temuan</li>
-                <li>Menghubungkan hasil dengan teori atau konteks</li>
-            </ul>
-            
-            <h3>Contoh</h3>
-            <p>Mayoritas siswa (90%) menggunakan internet untuk mencari informasi, menunjukkan kesadaran akan pentingnya literasi digital. Namun, hanya 60% yang memanfaatkannya untuk belajar. Hal ini menunjukkan perlunya edukasi tentang penggunaan internet untuk pembelajaran.</p>
-        `
-    },
-    8: {
-        title: "8. KESIMPULAN",
-        content: `
-            <h3>Pengertian</h3>
-            <p>Kesimpulan adalah ringkasan hasil penelitian yang menjawab tujuan yang telah ditetapkan.</p>
-            
-            <h3>Fungsi</h3>
-            <ul>
-                <li>Meringkas temuan utama</li>
-                <li>Menjawab tujuan penelitian</li>
-                <li>Memberikan penutup yang jelas</li>
-            </ul>
-            
-            <h3>Contoh</h3>
-            <p>Siswa kelas VIII aktif menggunakan internet, terutama untuk mencari informasi (90%) dan media sosial (83%). Penggunaan untuk belajar (60%) masih perlu ditingkatkan melalui edukasi dan pendampingan.</p>
-        `
-    },
-    9: {
-        title: "9. SARAN",
-        content: `
-            <h3>Pengertian</h3>
-            <p>Saran adalah rekomendasi atau masukan untuk perbaikan atau tindak lanjut berdasarkan hasil penelitian.</p>
-            
-            <h3>Fungsi</h3>
-            <ul>
-                <li>Memberikan rekomendasi praktis</li>
-                <li>Menyarankan penelitian lanjutan</li>
-                <li>Memberikan solusi terhadap masalah</li>
-            </ul>
-            
-            <h3>Contoh</h3>
-            <p>Sekolah perlu memberikan edukasi tentang pemanfaatan internet untuk pembelajaran. Orang tua dan guru dapat membimbing siswa dalam menggunakan internet secara produktif dan aman.</p>
-        `
-    },
-    10: {
-        title: "10. DAFTAR SUMBER",
-        content: `
-            <h3>Pengertian</h3>
-            <p>Daftar sumber adalah daftar referensi atau sumber informasi yang digunakan dalam laporan.</p>
-            
-            <h3>Fungsi</h3>
-            <ul>
-                <li>Menunjukkan kredibilitas informasi</li>
-                <li>Menghargai karya orang lain</li>
-                <li>Menghindari plagiarisme</li>
-                <li>Memudahkan pembaca mencari referensi</li>
-            </ul>
-            
-            <h3>Contoh</h3>
-            <p><strong>Data Primer:</strong><br>
-            Survei siswa kelas VIII SMP Negeri 1, 1-5 September 2026</p>
-            
-            <p><strong>Data Sekunder:</strong><br>
-            Kominfo. (2025). Survei Penggunaan Internet di Indonesia. Jakarta: Kementerian Komunikasi dan Informatika.</p>
         `
     }
 };
